@@ -10,5 +10,11 @@
              "disponible": true,
              "id":"1"
         }
+    ],
+    "usuarios":[
+        {
+            "email": "admin@mail.com",
+            "password": "123"
+        }
     ]
 }
