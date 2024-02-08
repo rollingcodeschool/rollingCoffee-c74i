@@ -6,7 +6,7 @@ const Administrador = () => {
        <div className="d-flex justify-content-between align-items-center mt-5">
         <h1 className="display-4 ">Productos disponibles</h1>
         <button className="btn btn-primary" to="/administrador/crear">
-          <i className="bi bi-file-earmark-plus"></i>
+        <i className="bi bi-file-earmark-plus"></i>
         </button>
       </div>
       <div className="table-responsive">
