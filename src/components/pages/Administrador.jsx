@@ -1,37 +1,33 @@
-import { Container } from "react-bootstrap";
+import { Container, Table, Button } from "react-bootstrap";
+import ItemProducto from "./producto/ItemProducto";
 const Administrador = () => {
   return (
     <Container className="mainContainer">
+       <div className="d-flex justify-content-between align-items-center mt-5">
+        <h1 className="display-4 ">Productos disponibles</h1>
+        <button className="btn btn-primary" to="/administrador/crear">
+          <i className="bi bi-file-earmark-plus"></i>
+        </button>
+      </div>
       <div className="table-responsive">
-        <table className="table table-striped table-bordered">
-          <thead>
-            <tr>
-              <th>Cod</th>
-              <th>Producto</th>
-              <th>Precio</th>
-              <th>Url Img</th>
-              <th>Categoria</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Capuccino</td>
-              <td>$150</td>
-              <td>
-                <div className="middle-item">
-                  <img className="img-fluid" src="https://images.pexels.com/photos/437716/pexels-photo-437716.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Capuchino" />
-                </div>
-              </td>
-              <td>Nose</td>
-              <td>
-                <button className="btn btn-success">Editar</button>
-                <button className="btn btn-danger">Borrar</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <Table responsive striped bordered hover>
+        <thead>
+          <tr className="text-center">
+            <th>Cod</th>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>URL de Imagen</th>
+            <th>Categoria</th>
+            <th>Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ItemProducto></ItemProducto>
+          <ItemProducto></ItemProducto>
+          <ItemProducto></ItemProducto>
+          <ItemProducto></ItemProducto>
+        </tbody>
+      </Table>
       </div>
     </Container>
   );
