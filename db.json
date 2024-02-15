@@ -1,20 +1,29 @@
 {
-    "productos":[
-        {
-            "nombreProducto":"café",
-            "precio": 1500,
-            "categoria": "bebida caliente",
-             "descripcion_breve": "un rico cafecito",
-             "descripcion_amplia": "un rico cafecito",
-             "imagen": "url",
-             "disponible": true,
-             "id":"1"
-        }
-    ],
-    "usuarios":[
-        {
-            "email": "admin@mail.com",
-            "password": "123"
-        }
-    ]
+  "productos": [
+    {
+      "nombreProducto": "café",
+      "precio": 1500,
+      "categoria": "bebida caliente",
+      "descripcion_breve": "un rico cafecito",
+      "descripcion_amplia": "un rico cafecito",
+      "imagen": "url",
+      "disponible": true,
+      "id": "1"
+    },
+    {
+      "id": "53b9",
+      "nombreProducto": "té",
+      "precio": "500",
+      "imagen": "https://images.pexels.com/photos/2115256/pexels-photo-2115256.jpeg",
+      "categoria": "Infusiones",
+      "descripcion_breve": "sdfsd sdfsdfsdfsdf",
+      "descripcion_amplia": "sdfsdddddd ssssssssssssssssssssssssssssssss"
+    }
+  ],
+  "usuarios": [
+    {
+      "email": "admin@mail.com",
+      "password": "123"
+    }
+  ]
 }

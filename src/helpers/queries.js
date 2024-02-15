@@ -12,7 +12,6 @@ export const crearProductoAPI = async (productoNuevo) => {
         },
         body: JSON.stringify(productoNuevo)
     });
-    console.log(respuesta)
     return respuesta
   } catch (error) {
     console.log(error);

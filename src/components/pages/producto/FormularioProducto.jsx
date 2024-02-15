@@ -1,5 +1,6 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { crearProductoAPI } from "../../../helpers/queries";
 
 const FormularioProducto = () => {
   const {
@@ -8,8 +9,12 @@ const FormularioProducto = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (producto) => {
+  const onSubmit = async(producto) => {
     console.log(producto);
+    //llamar a la funcion encargada de pedirle a la api crear un producto
+    const respuesta = await crearProductoAPI(producto);
+    //agregar un mensaje si el codigo es 201 todo salio bien, caso contrario mostrar un mensaje de que ocurrio un error
+    console.log(respuesta);
   };
 
   return (
