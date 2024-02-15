@@ -47,7 +47,7 @@ const FormularioProducto = () => {
               required: "El precio es obligatorio",
               min: {
                 value: 100,
-                message: "Debe ingresar como un monto de $100",
+                message: "Debe ingresar como minimo un monto de $100",
               },
               max: {
                 value: 10000,
