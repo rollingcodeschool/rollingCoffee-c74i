@@ -1,8 +1,24 @@
 import { Container, Table, Button } from "react-bootstrap";
 import ItemProducto from "./producto/ItemProducto";
 import { Link } from "react-router-dom";
-const Administrador = () => {
+import { useEffect, useState } from "react";
+import { leerProductosAPI } from "../../helpers/queries";
 
+const Administrador = () => {
+  const [productos, setProductos] = useState([]);
+
+  useEffect(() => {
+    obtenerProductos();
+  }, []);
+
+  const obtenerProductos = async () => {
+    const respuesta = await leerProductosAPI();
+    if (respuesta.status === 200) {
+      //guardar el array en el state
+      const datos = await respuesta.json();
+      setProductos(datos);
+    }
+  };
 
   return (
     <Container className="mainContainer">
