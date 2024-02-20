@@ -18,12 +18,40 @@
       "categoria": "Infusiones",
       "descripcion_breve": "sdfsd sdfsdfsdfsdf",
       "descripcion_amplia": "sdfsdddddd ssssssssssssssssssssssssssssssss"
+    },
+    {
+      "id": "55f2",
+      "nombreProducto": "brownie",
+      "precio": "500",
+      "imagen": "https://images.pexels.com/photos/2067396/pexels-photo-2067396.jpeg",
+      "categoria": "dulce",
+      "descripcion_breve": "sldfjs dksdjflskdjfslkfjsd",
+      "descripcion_amplia": "sdkfjsldkfjsd flskdfjlskdfjslkdf slkdfjslkdf"
+    },
+    {
+      "id": "95a9",
+      "nombreProducto": "brownie con almendras",
+      "precio": "800",
+      "imagen": "https://images.pexels.com/photos/887853/pexels-photo-887853.jpeg",
+      "categoria": "dulce",
+      "descripcion_breve": "sdfsdf sdssssssssss",
+      "descripcion_amplia": "sdfjsdk ksdfjskdf ksdfjskdf"
+    },
+    {
+      "id": "ef1d",
+      "nombreProducto": "Galleta de jengibre x3",
+      "precio": "500",
+      "imagen": "https://images.pexels.com/photos/6119145/pexels-photo-6119145.jpeg",
+      "categoria": "dulce",
+      "descripcion_breve": "ssdjfhs dskjdfhskdjfhsd",
+      "descripcion_amplia": "jsdhfksjdfh sjkfhsjkdfhskdhfksdjf"
     }
   ],
   "usuarios": [
     {
       "email": "admin@mail.com",
-      "password": "123"
+      "password": "123",
+      "id": "0d1f"
     }
   ]
 }

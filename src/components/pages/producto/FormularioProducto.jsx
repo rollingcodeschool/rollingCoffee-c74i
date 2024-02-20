@@ -1,12 +1,14 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { crearProductoAPI } from "../../../helpers/queries";
+import Swal from "sweetalert2";
 
 const FormularioProducto = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm();
 
   const onSubmit = async(producto) => {
@@ -14,6 +16,21 @@ const FormularioProducto = () => {
     //llamar a la funcion encargada de pedirle a la api crear un producto
     const respuesta = await crearProductoAPI(producto);
     //agregar un mensaje si el codigo es 201 todo salio bien, caso contrario mostrar un mensaje de que ocurrio un error
+    if(respuesta.status === 201){
+      Swal.fire({
+        title: "Producto creado",
+        text: `El producto "${producto.nombreProducto}" fue creado correctamente`,
+        icon: "success"
+      });
+      //limpiar el formulario
+      reset()
+    }else{
+      Swal.fire({
+        title: "Ocurrio un error",
+        text: `El producto "${producto.nombreProducto}" no pudo ser creado. Intenta esta operación en unos minutos.`,
+        icon: "error"
+      });
+    }
     console.log(respuesta);
   };
 
