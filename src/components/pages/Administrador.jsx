@@ -3,6 +3,7 @@ import ItemProducto from "./producto/ItemProducto";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { leerProductosAPI } from "../../helpers/queries";
+import Swal from "sweetalert2";
 
 const Administrador = () => {
   const [productos, setProductos] = useState([]);
@@ -17,6 +18,12 @@ const Administrador = () => {
       //guardar el array en el state
       const datos = await respuesta.json();
       setProductos(datos);
+    }else{
+      Swal.fire({
+        title: "Ocurrio un error",
+        text: `Intenta esta operación en unos minutos.`,
+        icon: "error"
+      });
     }
   };
 
@@ -41,10 +48,9 @@ const Administrador = () => {
             </tr>
           </thead>
           <tbody>
-            <ItemProducto></ItemProducto>
-            <ItemProducto></ItemProducto>
-            <ItemProducto></ItemProducto>
-            <ItemProducto></ItemProducto>
+            {
+              productos.map((producto)=> <ItemProducto key={producto.id} producto={producto}></ItemProducto>)
+            }
           </tbody>
         </Table>
       </div>
