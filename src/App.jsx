@@ -21,7 +21,7 @@ function App() {
         <Route exact path="/detalleProducto" element={<DetalleProducto></DetalleProducto>}></Route>
         <Route exact path="/administrador" element={<Administrador></Administrador>}></Route>
         <Route exact path="/administrador/crear" element={<FormularioProducto></FormularioProducto>}></Route>
-        {/* // <Route exact path="/administrador/editar" element={<Administrador></Administrador>}></Route>  */}
+        // <Route exact path="/administrador/editar/:id" element={<FormularioProducto></FormularioProducto>}></Route> 
         <Route path="*" element={<Error404></Error404>}></Route>
       </Routes>
       <Footer></Footer>
