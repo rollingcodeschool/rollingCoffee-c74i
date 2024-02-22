@@ -6,13 +6,13 @@ console.log(URI_Producto);
 export const crearProductoAPI = async (productoNuevo) => {
   try {
     const respuesta = await fetch(URI_Producto, {
-        method: "POST",
-        headers:{
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(productoNuevo)
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(productoNuevo),
     });
-    return respuesta
+    return respuesta;
   } catch (error) {
     console.log(error);
   }
@@ -20,12 +20,24 @@ export const crearProductoAPI = async (productoNuevo) => {
 
 //GET
 
-export const leerProductosAPI =  async()=>{
-  try{
+export const leerProductosAPI = async () => {
+  try {
     const respuesta = await fetch(URI_Producto);
     console.log(respuesta);
     return respuesta;
-  }catch (error){
-    console.log(error)
+  } catch (error) {
+    console.log(error);
   }
-}
+};
+
+//DELETE
+export const borrarProductoAPI = async (id) => {
+  try {
+    const respuesta = await fetch(`${URI_Producto}/${id}`, {
+      method: "DELETE"});
+    console.log(respuesta);
+    return respuesta
+  } catch (error) {
+    console.log(error);
+  }
+};
