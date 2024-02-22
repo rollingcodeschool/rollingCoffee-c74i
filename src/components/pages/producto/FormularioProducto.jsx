@@ -3,40 +3,44 @@ import { useForm } from "react-hook-form";
 import { crearProductoAPI } from "../../../helpers/queries";
 import Swal from "sweetalert2";
 
-const FormularioProducto = () => {
+const FormularioProducto = ({ editar, titulo }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset
+    reset,
   } = useForm();
 
-  const onSubmit = async(producto) => {
-    console.log(producto);
-    //llamar a la funcion encargada de pedirle a la api crear un producto
-    const respuesta = await crearProductoAPI(producto);
-    //agregar un mensaje si el codigo es 201 todo salio bien, caso contrario mostrar un mensaje de que ocurrio un error
-    if(respuesta.status === 201){
-      Swal.fire({
-        title: "Producto creado",
-        text: `El producto "${producto.nombreProducto}" fue creado correctamente`,
-        icon: "success"
-      });
-      //limpiar el formulario
-      reset()
-    }else{
-      Swal.fire({
-        title: "Ocurrio un error",
-        text: `El producto "${producto.nombreProducto}" no pudo ser creado. Intenta esta operación en unos minutos.`,
-        icon: "error"
-      });
+  const onSubmit = async (producto) => {
+    if (editar) {
+      //aqui agregar la solicitud a la api para editar un producto
+      console.log('aqui tendria que editar')
+    } else {
+      //llamar a la funcion encargada de pedirle a la api crear un producto
+      const respuesta = await crearProductoAPI(producto);
+      //agregar un mensaje si el codigo es 201 todo salio bien, caso contrario mostrar un mensaje de que ocurrio un error
+      if (respuesta.status === 201) {
+        Swal.fire({
+          title: "Producto creado",
+          text: `El producto "${producto.nombreProducto}" fue creado correctamente`,
+          icon: "success",
+        });
+        //limpiar el formulario
+        reset();
+      } else {
+        Swal.fire({
+          title: "Ocurrio un error",
+          text: `El producto "${producto.nombreProducto}" no pudo ser creado. Intenta esta operación en unos minutos.`,
+          icon: "error",
+        });
+      }
+      console.log(respuesta);
     }
-    console.log(respuesta);
   };
 
   return (
     <section className="container mainSection">
-      <h1 className="display-4 mt-5">Nuevo producto</h1>
+      <h1 className="display-4 mt-5">{titulo}</h1>
       <hr />
       <Form className="my-4" onSubmit={handleSubmit(onSubmit)}>
         <Form.Group className="mb-3" controlId="formNombreProdcuto">
@@ -112,7 +116,9 @@ const FormularioProducto = () => {
             <option value="dulce">Dulce</option>
             <option value="salado">Salado</option>
           </Form.Select>
-          <Form.Text className="text-danger">{errors.categoria?.message}</Form.Text>
+          <Form.Text className="text-danger">
+            {errors.categoria?.message}
+          </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formImagen">
           <Form.Label>Descripción breve*</Form.Label>
@@ -132,7 +138,9 @@ const FormularioProducto = () => {
               },
             })}
           />
-          <Form.Text className="text-danger">{errors.descripcion_breve?.message}</Form.Text>
+          <Form.Text className="text-danger">
+            {errors.descripcion_breve?.message}
+          </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formImagen">
           <Form.Label>Descripción Amplia*</Form.Label>
@@ -152,7 +160,9 @@ const FormularioProducto = () => {
               },
             })}
           />
-          <Form.Text className="text-danger">{errors.descripcion_amplia?.message}</Form.Text>
+          <Form.Text className="text-danger">
+            {errors.descripcion_amplia?.message}
+          </Form.Text>
         </Form.Group>
 
         <Button type="submit" variant="success">
