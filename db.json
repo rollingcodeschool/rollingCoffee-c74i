@@ -10,13 +10,13 @@
       "descripcion_amplia": "sdkfjsldkfjsd flskdfjlskdfjslkdf slkdfjslkdf"
     },
     {
-      "id": "d81e",
       "nombreProducto": "Mini Torta Chocolate",
-      "precio": "1499",
+      "precio": "1200",
       "imagen": "https://www.estherhelados.com.ar/webfiles/estherhelados/productos/133/1_1000x1000.jpg",
       "categoria": "Dulce",
-      "descripcion_breve": "Mini Torta Chocolate y Nuez\"",
-      "descripcion_amplia": "Brownie, helado de chocolate c/nuez , pionono, Dulce de leche repostero y ganache de chocolate."
+      "descripcion_breve": "Mini Torta Chocolate y Nuez, con chips de chocolate",
+      "descripcion_amplia": "Brownie, helado de chocolate c/nuez , pionono, Dulce de leche repostero y ganache de chocolate.",
+      "id": "d81e"
     },
     {
       "id": "0041",
@@ -46,13 +46,13 @@
       "descripcion_amplia": "El croissant de almendra es una delicia de hojaldre rellena de un suave y Dulce relleno de almendra. Su sabor exquisito y su textura crujiente lo convierten en un acompañamiento perfecto para tu café o té."
     },
     {
-      "id": "0c18",
       "nombreProducto": "café",
-      "precio": "500",
-      "imagen": "https://images.pexels.com/photos/2067396/pexels-photo-2067396.jpeg",
+      "precio": "1500",
+      "imagen": "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg",
       "categoria": "Infusiones",
-      "descripcion_breve": "wdfsdfsd ssssssssssssssssssss",
-      "descripcion_amplia": "sdffffffffffffffffffffffffffffffffssssssssssssssssss ssssssssssssssssss"
+      "descripcion_breve": "un café bonito",
+      "descripcion_amplia": "sdffffffffffffffffffffffffffffffffssssssssssssssssss ssssssssssssssssss",
+      "id": "0c18"
     }
   ],
   "usuarios": [
