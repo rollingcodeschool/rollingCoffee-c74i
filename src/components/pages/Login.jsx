@@ -1,5 +1,8 @@
 import { Form, Button, Container, Card } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { iniciarSesion } from "../../helpers/queries";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router";
 
 
 const Login = () => {
@@ -8,10 +11,25 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-
+const navegacion = useNavigate();
 
   const onSubmit = (usuario) => {
     console.log(usuario)
+    //pedir a la api verificar si existe ese usuario
+    if(iniciarSesion(usuario)){
+      Swal.fire({
+        title: "Bienvenido",
+        text: `Ingresaste al sistema rollingCoffee`,
+        icon: "success",
+      });
+      navegacion('/administrador')
+    }else{
+      Swal.fire({
+        title: "Ocurrio un error",
+        text: `campo/s invalido/s`,
+        icon: "error",
+      });
+    }
   };
 
   return (
