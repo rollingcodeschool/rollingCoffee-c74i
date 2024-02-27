@@ -28,6 +28,10 @@ const {id} = useParams();
       const productoBuscado = await respuesta.json();
       setValue('nombreProducto', productoBuscado.nombreProducto);
       setValue('precio', productoBuscado.precio);
+      setValue('imagen', productoBuscado.imagen);
+      setValue('categoria', productoBuscado.categoria);
+      setValue('descripcion_breve', productoBuscado.descripcion_breve);
+      setValue('descripcion_amplia', productoBuscado.descripcion_amplia);
     }
   }
 
@@ -133,8 +137,8 @@ const {id} = useParams();
             <option value="">Seleccione una opcion</option>
             <option value="Infusiones">Infusiones</option>
             <option value="Batidos">Batidos</option>
-            <option value="dulce">Dulce</option>
-            <option value="salado">Salado</option>
+            <option value="Dulce">Dulce</option>
+            <option value="Salado">Salado</option>
           </Form.Select>
           <Form.Text className="text-danger">
             {errors.categoria?.message}
