@@ -10,6 +10,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import FormularioProducto from "./components/pages/producto/FormularioProducto";
 import DetalleProducto from "./components/pages/DetalleProducto";
 import Login from "./components/pages/Login";
+import RutasProtegidas from "./components/routes/RutasProtegidas";
+import RutasAdmin from "./components/routes/RutasAdmin";
 
 function App() {
   return (
@@ -19,9 +21,21 @@ function App() {
       <Menu></Menu>
       <Routes>
         <Route exact path="/" element={<Inicio></Inicio>}></Route>
-        <Route exact path="/detalleProducto" element={<DetalleProducto></DetalleProducto>}></Route>
+        <Route
+          exact
+          path="/detalleProducto"
+          element={<DetalleProducto></DetalleProducto>}
+        ></Route>
         <Route exact path="/login" element={<Login></Login>}></Route>
-        <Route exact path="/administrador/*" element={<Administrador></Administrador>}></Route>
+        <Route
+          exact
+          path="/administrador/*"
+          element={
+            <RutasProtegidas>
+              <RutasAdmin></RutasAdmin>
+            </RutasProtegidas>
+          }
+        ></Route>
         <Route path="*" element={<Error404></Error404>}></Route>
       </Routes>
       <Footer></Footer>
