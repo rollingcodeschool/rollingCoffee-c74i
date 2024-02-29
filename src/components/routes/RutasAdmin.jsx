@@ -1,4 +1,6 @@
 import { Route, Routes } from "react-router";
+import Administrador from "../pages/Administrador";
+import FormularioProducto from "../pages/producto/FormularioProducto";
 
 const RutasAdmin = () => {
   return (
@@ -11,7 +13,7 @@ const RutasAdmin = () => {
         ></Route>
         <Route
           exact
-          path="/administrador/crear"
+          path="/crear"
           element={
             <FormularioProducto
               editar={false}
@@ -21,7 +23,7 @@ const RutasAdmin = () => {
         ></Route>
         <Route
           exact
-          path="/administrador/editar/:id"
+          path="/editar/:id"
           element={
             <FormularioProducto
               editar={true}
