@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router";
 
 
-const Login = () => {
+const Login = ({setUsuarioLogueado}) => {
   const {
     register,
     handleSubmit,
@@ -22,6 +22,7 @@ const navegacion = useNavigate();
         text: `Ingresaste al sistema rollingCoffee`,
         icon: "success",
       });
+      setUsuarioLogueado(usuario.email)
       navegacion('/administrador')
     }else{
       Swal.fire({

@@ -12,13 +12,16 @@ import DetalleProducto from "./components/pages/DetalleProducto";
 import Login from "./components/pages/Login";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdmin from "./components/routes/RutasAdmin";
+import { useState } from "react";
 
 function App() {
+  const usuario = JSON.parse(sessionStorage.getItem('loginRollingCoffee')) || ""
+  const [usuarioLogueado , setUsuarioLogueado] = useState(usuario); 
   return (
     //administrador de rutas
     // www.rollingCoffee.com/
     <BrowserRouter>
-      <Menu></Menu>
+      <Menu usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}></Menu>
       <Routes>
         <Route exact path="/" element={<Inicio></Inicio>}></Route>
         <Route
@@ -26,7 +29,7 @@ function App() {
           path="/detalleProducto"
           element={<DetalleProducto></DetalleProducto>}
         ></Route>
-        <Route exact path="/login" element={<Login></Login>}></Route>
+        <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}></Route>
         <Route
           exact
           path="/administrador/*"
