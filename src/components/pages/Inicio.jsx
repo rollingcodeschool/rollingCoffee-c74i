@@ -40,7 +40,7 @@ const Inicio = () => {
             {productos.map((producto) => (
               <CardProducto
                 producto={producto}
-                key={producto.id}
+                key={producto._id}
               ></CardProducto>
             ))}
           </Row>
